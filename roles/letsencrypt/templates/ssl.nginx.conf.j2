@@ -1,0 +1,19 @@
+server {
+
+       listen 443 ssl;
+       ssl_certificate /etc/letsencrypt/live/{{ front_domain }}/fullchain.pem; 
+       ssl_certificate_key /etc/letsencrypt/live/{{ front_domain }}/privkey.pem; 
+         
+       server_name {{ front_domain }};
+       include *.location.conf
+
+}
+
+server {
+
+       listen 80;
+       return 301 https://{{ front_domain }};
+       server_name {{ front_domain }};
+
+       root /srv/www;
+}

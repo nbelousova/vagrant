@@ -1,0 +1,5 @@
+- hosts: web
+  gathering_facts: no
+- tasks: 
+  - name: Installing python
+     raw: apt-get update && apt-get install -y python
