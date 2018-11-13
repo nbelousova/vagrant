@@ -1,0 +1,7 @@
+- hosts: all
+  become: false
+  roles:
+  - calc-sum
+  roles:
+  - nginx
+  - calc-front

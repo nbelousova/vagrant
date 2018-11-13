@@ -1,5 +1,0 @@
-- hosts:  front
-- roles:
-  - nginx
-  - calc-front
-
