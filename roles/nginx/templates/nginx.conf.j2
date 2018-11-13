@@ -2,14 +2,14 @@ server {
 
        listen 80;
        
-       server_name {{ ansible_facts["default_ipv4"]["address"] }}; 
+       server_name {{ vars.ansible_eth0.ipv4.address }}; 
                 
        location / {
        root /srv/www;
        }
 
        location /api/sum/ {
-         proxy_pass http://localhost:8080;
+         proxy_pass http://localhost:8080/sum;
        }  
 
 }

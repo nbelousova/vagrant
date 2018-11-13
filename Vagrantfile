@@ -18,8 +18,10 @@ Vagrant.configure('2') do |config|
       end
        
       config.vm.provision "ansible" do |ansible|
-       ansible.playbook = "python.yml"
-       ansible.playbook = "goapp.yml"
+       ansible.playbook = "first.yml"
+      end
+      config.vm.provision "ansible" do |ansible|
+       ansible.playbook = "second.yml"
       end
 
       config.vm.synced_folder ".", "/vagrant", disabled: true
